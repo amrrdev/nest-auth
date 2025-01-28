@@ -1,4 +1,10 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get, UseGuards } from '@nestjs/common';
+import { AccessTokenGuard } from '../iam/authentication/guards/access-token.guard';
 
-@Controller()
-export class CoffeesController {}
+@Controller('coffees')
+export class CoffeesController {
+  @Get()
+  find() {
+    return 'all coffee';
+  }
+}
